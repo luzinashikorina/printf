@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 	int num = 0, argc = 0;
 	char *strarg;
 	char carg;
-	char s [sizeof(int) * 8 + 1];
 	
 	for (i = 0; format[i]; i++)
 	{
@@ -40,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 			{
-				itoa(va_arg(args, int), s, 10);
+				itoa(va_arg(args, int), strarg);
 				_putstring(strarg);
 				num += _len(strarg);
 			}
