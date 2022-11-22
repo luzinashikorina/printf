@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <Stdlib.h>
 
 /**
  * _printf - outputs according to a format
@@ -12,8 +13,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int num = 0, argc = 0;
 	char *strarg;
-	int iarg;
 	char carg;
+	char s [sizeof(int) * 8 + 1];
 	
 	for (i = 0; format[i]; i++)
 	{
@@ -35,17 +36,14 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				strarg = va_arg(args, char*);
-				for (i = 0; strarg[i]; i++)
-				{
-					_putchar(strarg[i]);
-					num++;
-				}
+				_putstring(strarg);
+				num += _len(strarg);
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 			{
-				iarg = va_arg(args, int);
-				_putchar(iarg);
-				num++;
+				strarg = itoa(va_arg(args, int));
+				_putstring(strarg);
+				num += _len(strarg);
 			}
 			else	
 			{
