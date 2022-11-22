@@ -22,8 +22,8 @@ int _len(char *str)
  */
 int _printf(const char *format, ...)
 {
-	int i, num, argc;
-	va_list args;
+	int i, argc;
+	va_list args = 0, num = 0;
 	
 	for (i = 0; format[i]; i++)
 	{
@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		_putchar(format[i]);
+		num++;
 	}
 	/*va_arg(args, )*/;
 	va_end (args);	
