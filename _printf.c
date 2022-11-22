@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _printf - outputs according to a format
@@ -42,8 +40,8 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 			{
-				/*strarg = itoa(va_arg(args, int), s, 10);*/
-				_putstring(itoa(va_arg(args, int), s, 10);
+				itoa(va_arg(args, int), s, 10);
+				_putstring(strarg);
 				num += _len(strarg);
 			}
 			else	
