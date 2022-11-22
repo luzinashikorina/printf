@@ -22,8 +22,9 @@ int _len(char *str)
  */
 int _printf(const char *format, ...)
 {
-	int i, argc;
-	va_list args = 0, num = 0;
+	int i;
+	va_list args;
+	int num = 0, argc = 0;
 	
 	for (i = 0; format[i]; i++)
 	{
