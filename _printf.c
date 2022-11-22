@@ -2,20 +2,6 @@
 #include <stdarg.h>
 
 /**
- * _len - counts length
- * @str: the string
- * Return: the length
- */
-int _len(char *str)
-{
-	int len;
-
-	for (len = 0; str[len]; len++)
-	;
-	return len;
-}
-
-/**
  * _printf - outputs according to a format
  * @format: str
  * Return: num of chars printed
@@ -48,6 +34,8 @@ int _printf(const char *format, ...)
 				for (i = 0; str[i]; i++)
 					_putchar(str[i]);
 			}
+			else if (format[i] == 'd' || format[i] == 'i')
+				_putchat(va_arg(args, int));
 			else	
 			{
 				_putchar(format[i]);
