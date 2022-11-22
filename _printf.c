@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 'c')
 			{
-				_putchar(va_arg(ards, int));
+				_putchar(va_arg(args, int));
 			}
 			else if (format[i] == 's')
 			{
