@@ -21,12 +21,25 @@ int _len(char *str)
  */
 int _printf(const char *format, ...)
 {
-	int i, num;
-
+	int i, num, argc;
+	va_list args;
+	
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
-
+			argc++;
 	}
+	va_start(args, format);
+	for (i = 0; format[i]; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			continue;
+		}
+		_putchar(format[i]);
+	}
+	/*va_arg(args, )*/;
+	va_end (args);	
 	return (num);
 }
