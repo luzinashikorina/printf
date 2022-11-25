@@ -13,7 +13,9 @@ int _printf(const char *format, ...)
 	int num = 0, argc = 0;
 	char *strarg;
 	char carg;
-	
+
+	if (format == NULL)
+		return (NULL);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
@@ -43,8 +45,9 @@ int _printf(const char *format, ...)
 				_putstring(strarg);
 				num += _len(strarg);
 			}
-			else	
+			else
 			{
+				_putchar(format[i - 1]);
 				_putchar(format[i]);
 				num++;
 			}
@@ -53,7 +56,6 @@ int _printf(const char *format, ...)
 		_putchar(format[i]);
 		num++;
 	}
-	/*va_arg(args, )*/;
-	va_end (args);	
+	va_end(args);
 	return (num);
 }

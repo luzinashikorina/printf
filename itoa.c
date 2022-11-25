@@ -1,18 +1,22 @@
 #include "main.h"
 
- /* reverse:  reverse string s in place */
+/*
+ * reverse - reverse string s in place
+ * @s: the string
+ * Return: nothing
+ */
 void reverse(char s[])
 {
 	int i, j;
 	char c;
 
-	for (i = 0, j = _len(s)-1; i<j; i++, j--) 
+	for (i = 0, j = _len(s) - 1; i < j; i++, j--)
 	{
 		c = s[i];
 		s[i] = s[j];
 		s[j] = c;
 	}
-}  
+}
 
 /**
  * itoa - converts int to string
@@ -27,11 +31,11 @@ void itoa(int n, char s[])
 
 	if (n < 0)
 	{
-		sign = -1;	
+		sign = -1;
 		n *= -1;
-	}	 
+	}
 	do {
-		s[i++] = n % 10 + '0';  
+		s[i++] = n % 10 + '0';
 	} while ((n /= 10) > 0);
 	if (sign < 0)
 		s[i++] = '-';
