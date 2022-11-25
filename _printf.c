@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	char carg;
 
 	if (format == NULL)
-		return (NULL);
+		return (0);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
